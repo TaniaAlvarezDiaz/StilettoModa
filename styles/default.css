@@ -1,0 +1,386 @@
+@import "variables.css";
+
+* {
+  color: var(--text-color);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: var(--font-normal);
+}
+
+.price {
+  font-family: serif, "Times New Roman", Times, Georgia;
+}
+
+html {
+  max-width: 70em;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: var(--font-large);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: var(--font-xlarge);
+  outline: none;
+}
+
+.generic_btn {
+  background-color: var(--primary-color);
+  border: none;
+  margin: 10px 0px;
+  padding: 10px;
+  width: 100%;
+}
+
+.generic_btn:hover {
+  background: var(--secondary-color);
+  border: 1px solid black;
+}
+
+#wrapper {
+  font-family: "Source Sans Pro", serif;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "navigation"
+    "main"
+    "footer";
+}
+
+#header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 0.5fr;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+#logo {
+  grid-column: 1;
+}
+
+#logo img {
+  max-height: 100px;
+}
+
+/* BUSCADOR */
+#search {
+  grid-column: 2 / span 2;
+  display: flex;
+  flex-direction: row;
+}
+
+#search input[type="text"] {
+  padding: 10px;
+  font-size: var(--font-large);
+  border: 1px solid black;
+  width: 80%;
+  background: white;
+}
+
+#search button {
+  width: 20%;
+  background: var(--primary-color);
+  font-size: var(--font-large);
+  border: 1px solid black;
+  border-left: none;
+  cursor: pointer;
+}
+
+#search button:hover {
+  background: var(--secondary-color);
+}
+
+/* FIN BUSCADOR */
+
+/* OPTIONS */
+#options {
+  grid-column: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#options > * {
+  background-color: transparent;
+  border: none;
+  font-size: var(--font-xxlarge);
+  margin-left: 10px;
+}
+
+#login:hover,
+#shopping_cart:hover {
+  background: var(--secondary-color);
+}
+
+/* FIN OPTIONS */
+
+/* NAVEGACION */
+#navigation {
+  background-color: var(--primary-color);
+  grid-area: navigation;
+  padding: 10px;
+  text-align: center;
+}
+
+#navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Elementos del menú general */
+#navigation ul li {
+  background-color: var(--primary-color);
+}
+
+/* Elementos del submenú */
+#navigation ul ul li {
+  text-align: left;
+}
+
+#navigation ul li:hover {
+  background-color: var(--secondary-color);
+}
+
+#navigation ul ul {
+  display: none; /* Ocultar los submenús */
+  position: absolute;
+  z-index: 1; /* Se muestra encima de los elementos, añadido para que aparezca encima del filtrado (products.html) */
+}
+
+#navigation ul li:hover > ul {
+  display: block; /* Hacer visible el submenú */
+}
+
+/* Menú general */
+#navigation > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#navigation a {
+  padding: 5px 10px;
+  display: block;
+}
+
+#navigation a.selected {
+  background-color: var(--secondary-color);
+}
+
+/* Elementos del menú general */
+#navigation ul a {
+  font-size: var(--font-xlarge);
+}
+
+/* Elementos del submenú */
+#navigation ul ul a {
+  font-size: var(--font-large);
+}
+
+/* FIN NAVEGACION */
+
+#main {
+  grid-area: main;
+}
+
+.main_header {
+  font-size: var(--font-xlarge);
+  margin-bottom: 5px;
+}
+
+/* FOOTER */
+#footer {
+  background-color: var(--primary-color);
+  grid-area: footer;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "company contact others"
+    "company contact rrss";
+  grid-column-gap: 10px;
+}
+
+#footer > section {
+  padding: 0px 20px;
+}
+
+#footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#footer li {
+  margin: 5px 0px;
+}
+
+#company {
+  grid-area: company;
+}
+
+#contact {
+  grid-area: contact;
+}
+
+#others {
+  grid-area: others;
+}
+
+/* REDES SOCIALES */
+#rrss {
+  grid-area: rrss;
+}
+
+#social {
+  display: grid;
+  grid-template-columns: repeat(3, 0.1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 15px;
+}
+
+.social_btn {
+  font-size: var(--font-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+
+.facebook_btn {
+  background-color: #1877f2;
+}
+
+.facebook_btn:hover,
+.twitter_btn:hover,
+.instagram_btn:hover {
+  background-color: black;
+}
+
+.facebook_btn::before {
+  font-family: "FontAwesome";
+  content: "\f09a";
+}
+
+.instagram_btn {
+  background-color: #bd3381;
+}
+
+.instagram_btn::before {
+  font-family: "FontAwesome";
+  content: "\f16d";
+}
+
+.twitter_btn {
+  background-color: rgba(29, 161, 242, 1);
+}
+
+.twitter_btn::before {
+  font-family: "FontAwesome";
+  content: "\f099";
+}
+
+/* FIN REDES SOCIALES */
+
+/* FIN FOOTER */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 950px) {
+  #shopping_cart {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #logo img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "company contact"
+      "others rrss";
+  }
+}
+
+@media screen and (max-width: 610px) {
+  #navigation a {
+    padding: 5px;
+  }
+
+  /* Elementos del menú general */
+  #navigation ul a {
+    font-size: var(--font-normal);
+  }
+
+  /* Elementos del submenú */
+  #navigation ul ul a {
+    font-size: var(--font-small);
+  }
+
+  h1 {
+    font-size: var(--font-normal);
+  }
+
+  #header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 0px;
+  }
+
+  #search {
+    grid-column: 1 / span 2;
+  }
+
+  #options {
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "company"
+      "contact"
+      "others"
+      "rrss";
+  }
+}
+
+@media screen and (max-width: 415px) {
+  #navigation a {
+    font-size: var(--font-small);
+  }
+
+  /* Elementos del menú general */
+  #navigation ul a {
+    font-size: var(--font-small);
+  }
+}

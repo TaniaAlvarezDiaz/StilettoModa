@@ -1,0 +1,13 @@
+:root {
+  /* Colors */
+  --text-color: black;
+  --primary-color: #e3c116;
+  --secondary-color: #f9ea9f;
+
+  /* Font sizes */
+  --font-small: 0.8em;
+  --font-normal: 1em;
+  --font-large: 1.2em;
+  --font-xlarge: 1.4em;
+  --font-xxlarge: 1.9em;
+}

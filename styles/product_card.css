@@ -1,0 +1,52 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: gainsboro;
+}
+
+.card > div {
+  padding: 0 30px;
+}
+
+.card img {
+  max-height: 300px;
+  width: auto;
+  padding: 10px 0;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.7fr 0.5fr;
+}
+
+.description :nth-child(2) {
+  max-width: 100%;
+  margin: 0 auto;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Número de líneas a mostrar */
+}
+
+.price {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+@media screen and (max-width: 980px) {
+  .card img {
+    max-height: 200px;
+  }
+
+  .card_btn {
+    font-size: var(--font-large);
+  }
+}

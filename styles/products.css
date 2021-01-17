@@ -1,0 +1,158 @@
+@import "variables.css";
+@import "product_card.css";
+
+#main {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  align-items: start; /* Necesario para que se aplique position=sticky en el filtrado */
+}
+
+/* FILTROS */
+#products_filter {
+  grid-column: 1;
+
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+#products_filter > article > h1 {
+  font-size: var(--font-large);
+}
+
+#products_filter article article h1 {
+  font-size: var(--font-normal);
+}
+
+#brand_filter_section,
+#size_filter_section {
+  display: flex;
+  flex-direction: column;
+}
+
+#brand_filter_section label,
+#size_filter_section label {
+  padding: 5px 0px;
+}
+
+#btn_delete_filters {
+  font-size: var(--font-normal);
+}
+
+/* FILTRO PRECIO */
+#price_filter_value {
+  font-size: var(--font-normal);
+  font-weight: normal;
+}
+
+/* Google Chrome */
+#price_filter {
+  overflow: hidden;
+  -webkit-appearance: none;
+  background-color: var(--secondary-color);
+}
+
+#price_filter:focus {
+  outline: none;
+}
+
+#price_filter::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  color: var(--secondary-color);
+  margin-top: -1px;
+}
+
+#price_filter::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: pointer;
+  background: black;
+  box-shadow: -80px 0 0 80px var(--primary-color);
+}
+
+/* Mozilla Firefox */
+#price_filter::-moz-range-progress {
+  background-color: var(--secondary-color);
+}
+#price_filter::-moz-range-track {
+  background-color: gainsboro;
+}
+/* IE*/
+#price_filter::-ms-fill-lower {
+  background-color: var(--secondary-color);
+}
+#price_filter::-ms-fill-upper {
+  background-color: gainsboro;
+}
+/* FIN FILTRO PRECIO */
+
+/* CHECKBOXES MARCA Y TALLA */
+.checkbox input {
+  filter: grayscale();
+}
+/* FIN CHECKBOXES MARCA Y TALLA*/
+
+/* FIN FILTROS */
+
+/* PRODUCTOS */
+#products {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+#products > h1 {
+  grid-column: 1 / span 2;
+}
+
+/* FIN PRODUCTOS */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 800px) {
+  #price_filter {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main_header {
+    font-size: var(--font-normal);
+  }
+
+  .card_btn {
+    font-size: var(--font-normal);
+  }
+
+  #main {
+    grid-gap: 8px;
+  }
+
+  #order_types {
+    font-size: var(--font-small);
+  }
+
+  #btn_delete_filters {
+    font-size: var(--font-small);
+  }  
+
+  #products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #products > h1 {
+    grid-column: 1;
+  }
+
+  #products_filter > article > h1 {
+    font-size: var(--font-normal);
+  }
+
+  #products_filter article article h1 {
+    font-size: var(--font-small);
+  }
+}
